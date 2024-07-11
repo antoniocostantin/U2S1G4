@@ -1,4 +1,5 @@
-*{    background-color: #666;}
+*{    background-color: #666;
+color: rgb(38, 46, 46);}
 
 .container{
     display: flex;
@@ -13,7 +14,7 @@
 }
 
 .postit{
-
+    margin: 10px;
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -22,4 +23,44 @@
     /* border: 1px solid red; */
     background: linear-gradient(0deg, rgba(114, 114, 114, 0.582) 0%, rgba(255, 255, 255, 0) 30%);
     box-shadow: 5px 5px 20px -5px #000000;
-    opacity: 0;}
+}
+
+.green,.green h4,.green p{
+    background-color: green;
+}
+
+
+.yellow, .yellow h4, .yellow p {
+    background-color: yellow;
+}
+
+.purple,.purple h4,.purple p{
+    background-color: purple;
+}
+
+
+.yellow, .yellow h4, .yellow p {
+    background-color: yellow;
+}
+
+.rotate-20{
+    rotate: -20deg;
+}
+
+.rotate18{
+    transform: rotate(18deg);
+}
+
+.rotate12{
+    transform: rotate(12deg);
+}
+
+.rotate-8{
+    transform: rotate(-8deg);
+}
+
+.postit:hover{
+    scale: 1.5;
+    z-index: 10;
+    flex-grow: 5;
+}
