@@ -7,33 +7,70 @@
 6 animare le altre 2 parole
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
-
 #testoAlternato {
-    padding: 10px 5px;
-    border: solid 1px navy;
-    margin-top: 20px;
-    display: inline-block;
+    margin: auto;
+    text-align: center;
+    border: 1px solid;
+    padding: 10px 
+    color: antiquewhite;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 50px -45px 5px -23px rgba(0,0,0,0); 
+box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 50px -45px 5px -23px rgba(0,0,0,0);
+    background: linear-gradient(135deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+  }
+
+.parole {
     position: relative;
 }
 
-.parole {
-    color: #6a889c;
+.item {
     position: absolute;
+    width: max-content;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;}
+
+.uno{
+    opacity: 1;
+    animation: switch 5s linear 0s infinite;
+    color: darkblue;
 }
 
-.uno {
-    animation-name: switch;
-    animation-duration: 4s;
+.due {
+    opacity: 0;
+    animation: switch 5s linear 1.7s infinite;
+    color: darkred;
+}
+
+.tre{
+    
+    opacity: 0;
+    animation: switch 5s linear 3.4s infinite;
+    color: indigo;
 }
 
 @keyframes switch {
-
-    0%,
-    100% {
-        transform: scale(1);
+    0%{
+        opacity: 0;
+        transform: translateY(-2em);
+        content: "interfacce web";
+    }
+    
+    10%{
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    50% {
-        transform: scale(0.6);
+    25%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    32%{
+        opacity: 0;
+        transform: translateY(2em);
+        content: "interfacce web";
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(-2em);
     }
 }
