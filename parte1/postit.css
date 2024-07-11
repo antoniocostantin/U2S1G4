@@ -1,8 +1,16 @@
-*{    background-color: #666;
-color: rgb(38, 46, 46);}
-
-.container{
+body {
+    background-color: #666;
+    color: rgb(38, 46, 46);
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.container {
+    background-image: url("https://img.freepik.com/foto-gratuito/lavagna-vuota_53876-16241.jpg?t=st=1720726617~exp=1720730217~hmac=9435c150a7f9024df1d2b7124759ee5f31ca60cb7e401243fe2c1e237c84c1da&w=1800");
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat
     flex-direction: row;
     flex-wrap: wrap;
     /* border: 1px solid black; */
@@ -13,10 +21,12 @@ color: rgb(38, 46, 46);}
     padding: 4em 0;
 }
 
-.postit{
+.postit {
     margin: 10px;
     width: 20%;
+    height: 20%;
     display: flex;
+    opacity: 0;
     flex-direction: column;
     align-items: center;
     padding: 4em 0;
@@ -25,42 +35,139 @@ color: rgb(38, 46, 46);}
     box-shadow: 5px 5px 20px -5px #000000;
 }
 
-.green,.green h4,.green p{
+.green,
+.green h4,
+.green p {
     background-color: green;
 }
 
 
-.yellow, .yellow h4, .yellow p {
+.yellow,
+.yellow h4,
+.yellow p {
     background-color: yellow;
 }
 
-.purple,.purple h4,.purple p{
+.purple,
+.purple h4,
+.purple p {
     background-color: purple;
 }
 
 
-.yellow, .yellow h4, .yellow p {
+.yellow,
+.yellow h4,
+.yellow p {
     background-color: yellow;
 }
 
-.rotate-20{
-    rotate: -20deg;
-}
 
-.rotate18{
+
+.rotate18 {
     transform: rotate(18deg);
 }
 
-.rotate12{
+.rotate12 {
     transform: rotate(12deg);
+    animation-fill-mode: forwards;
 }
 
-.rotate-8{
+.rotate-8 {
     transform: rotate(-8deg);
 }
 
-.postit:hover{
-    scale: 1.5;
+.postit:hover {
+    transform: scale(1.5);
+    transition: 0.8s linear;
     z-index: 10;
-    flex-grow: 5;
+}
+
+
+@keyframes postit12 {
+    0%{
+        opacity: 0.3;
+        transform: scale(10) rotate(0deg);
+    }
+
+    10%{
+        opacity: 0.5;
+    }
+
+    25%{
+        opacity: 1;
+    }
+
+    90%{
+        transform: rotate(8deg);
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes postit8 {
+    0%{
+        opacity: 0.3;
+        transform: scale(10) rotate(0deg);
+    }
+
+    10%{
+        opacity: 0.5;
+    }
+
+    25%{
+        opacity: 1;
+    }
+
+    90%{
+        transform: rotate(4deg);
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes postit18 {
+    0%{
+        opacity: 0.3;
+        transform: scale(10) rotate(0deg);
+    }
+
+    10%{
+        opacity: 0.5;
+    }
+
+    25%{
+        opacity: 1;
+    }
+
+    90%{
+        transform: rotate(10deg);
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+}
+
+.pinrot8{
+    animation: postit8 0.9s;
+    animation-fill-mode: forwards;
+}
+
+.pinrot18{
+    animation: postit18 0.9s;
+    animation-fill-mode: forwards;
+}
+
+.pinrot12 {
+    animation: postit12 0.9s;
+    animation-fill-mode: forwards;
 }
